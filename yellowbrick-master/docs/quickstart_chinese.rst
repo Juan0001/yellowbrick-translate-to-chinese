@@ -217,6 +217,6 @@ Visualizer还可封装Scikit-Learn模型然后对其进行评估，超参数调�
 
 在这个图上，我们可以看到大部分的点集中在小于200骑手的位置。我们也许想要尝试用正交匹配追踪算法（OMP）或者样条（spline）来训练一个将更多区域性考虑进来的回归模型。我们还可以看到残差图中奇怪的拓扑结构好像已被Ridge回归纠正，而且在我们的模型中大值和小值之间有了更多的平衡。Ridge正则化可能纠正了两个特征之间的协方差问题。当我们用其他模型的形式将我们的数据分析推进的同时，我们可以继续visualizers来快速比较并且可视化我们的结果。
 
-希望这个流程让你对怎样将Visualizers通过Scikit-Learn整合到机器学习中去有一个概念，并且给你启发让你将其运用到你的工作中！如果想要了解更多的有关怎样开始使用Yellowbrick的信息，请查看:doc:`tutorial` 。然后你就在 :doc:`api/index` 上快速查看更多的特定visualizers了。
+希望这个流程让你对怎样将Visualizers通过Scikit-Learn整合到机器学习中去有一个概念，并且给你启发让你将其运用到你的工作中！如果想要了解更多的有关怎样开始使用Yellowbrick的信息，请查看 :doc:`tutorial` 。然后你就在 :doc:`api/index` 上快速查看更多的特定visualizers了。
 
 翻译：`Juan L. Kehoe <https://juan0001.github.io/>`_
