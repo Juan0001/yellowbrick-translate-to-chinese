@@ -29,12 +29,11 @@ Yellowbrick虽然和Python 2.7及以后版本也兼容，但是如果你想更�
 
 你也可以用 ``-u`` 标记对Scikit-Learn，matplotlib或者其他和Yellowbrick兼容的第三方包进行升级.
 
-<<<<<<< HEAD
 如果你使用的是Windows或者Anaconda，你也可以充分利用
 `conda <https://conda.io/docs/intro.html>`_ 的功能安装 `Anaconda Yellowbrick package <https://anaconda.org/DistrictDataLabs/yellowbrick>`_ :
-=======
+
 如果你使用的是Windows或者Anaconda，你也可以充分利用 `conda <https://conda.io/docs/intro.html>`_ 的功能安装 `Anaconda Yellowbrick package <https://anaconda.org/DistrictDataLabs/yellowbrick>`_ :
->>>>>>> c999e47a401f864c18660a475506916062b50de6
+
 
 .. code-block:: bash
 
