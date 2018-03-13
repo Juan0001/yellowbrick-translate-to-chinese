@@ -5,7 +5,7 @@
 
 如果你对Yellowbrick还不熟悉, 这个教程可以帮助你很快上手将可视化运用到你机器学习的流程中去。不过在我们开始用Yellowbrick之前，有几个开发环境相关的问题需要注意。
 
-Yellowbrick主要依赖于两个包: `Scikit-Learn <http://scikit-learn.org/>`_ 和 `Matplotlib <http://matplotlib.org/>`_.如果你没有安装这两个包也没关系，当你安装Yellowbrick的时候，它会帮你将它们一起装上。需要注意的是，要想Yellowbrick达到最佳效果，最好是结合Scikit-Learn 0.18和Matplotlib 2.0及以上版本使用。因为上述两个包都通过C语言编译，在某些系统上（比如Windows）安装时可能会有一些困难。如果你安装有困难，可以使用`Anaconda <https://anaconda.org>`_ 等其他版本Python。
+Yellowbrick主要依赖于两个包: `Scikit-Learn <http://scikit-learn.org/>`_ 和 `Matplotlib <http://matplotlib.org/>`_.如果你没有安装这两个包也没关系，当你安装Yellowbrick的时候，它会帮你将它们一起装上。需要注意的是，要想Yellowbrick达到最佳效果，最好是结合Scikit-Learn 0.18和Matplotlib 2.0及以上版本使用。因为上述两个包都通过C语言编译，在某些系统上（比如Windows）安装时可能会有一些困难。如果你安装有困难，可以使用 `Anaconda <https://anaconda.org>`_ 等其他版本Python。
 
 
 .. 注意:: Jupyter，Pandas，还有其他辅助库，比如文字可视化库（NLTK）是没有和Yellowbrick一起安装的，必须单独安装.
@@ -29,19 +29,19 @@ Yellowbrick虽然和Python 2.7及以后版本也兼容，但是如果你想更�
 
 你也可以用``-u``标记对Scikit-Learn，matplotlib或者其他和Yellowbrick兼容的第三方包进行升级.
 
-如果你使用的是Windows或者Anaconda，你也可以充分利用`conda <https://conda.io/docs/intro.html>`_ 的功能安装`Anaconda Yellowbrick package <https://anaconda.org/DistrictDataLabs/yellowbrick>`_ :
+如果你使用的是Windows或者Anaconda，你也可以充分利用 `conda <https://conda.io/docs/intro.html>`_ 的功能安装 `Anaconda Yellowbrick package <https://anaconda.org/DistrictDataLabs/yellowbrick>`_ :
 
 .. code-block:: bash
 
     conda install -c districtdatalabs yellowbrick
 
-.. 警告:: 在Linux上用Anaconda安装matplotlib时有一个`漏洞 <https://github.com/DistrictDataLabs/yellowbrick/issues/205>`_ 。如果你有任何问题，请在GitHub知会我们.
+.. 警告:: 在Linux上用Anaconda安装matplotlib时有一个 `漏洞 <https://github.com/DistrictDataLabs/yellowbrick/issues/205>`_ 。如果你有任何问题，请在GitHub知会我们.
 
 一旦安装好，不管你是在Python内部还是在Jupyter notebooks上运行Yellowbrick应该就没问题了。需要注意的是，因为Yellowbrick用的是matplotlib，其并不能在虚拟环境中运行。如果你一定要用的话，可能需要费一些周折。
 
 使用Yellowbrick
 -----------------
-为了更好得配合Scikit-Learn一起使用，我们特意对Yellowbrick API进行了一些特殊设计。当然其最主要的接口就是“Visualizer” —— 一个可以运用数据产生图片的对象。visualizer是一系列Scikit-Learn的`Estimator <http://scikit-learn.org/stable/developers/contributing.html#apis-of-scikit-learn-objects>`_ 对象并且和画图的方法有很多接口。和用Scikit-Learn建模相同的流程相同，用visualizer也需要先将其载入，对其初始化，调用其``fit()``方法，然后调用其``poof()``方法 —— 然后就是见证奇迹的那一刻了。
+为了更好得配合Scikit-Learn一起使用，我们特意对Yellowbrick API进行了一些特殊设计。当然其最主要的接口就是“Visualizer” —— 一个可以运用数据产生图片的对象。visualizer是一系列Scikit-Learn的 `Estimator <http://scikit-learn.org/stable/developers/contributing.html#apis-of-scikit-learn-objects>`_ 对象并且和画图的方法有很多接口。和用Scikit-Learn建模相同的流程相同，用visualizer也需要先将其载入，对其初始化，调用其``fit()``方法，然后调用其``poof()``方法 —— 然后就是见证奇迹的那一刻了。
 
 比如，有很多visualizer可以作为转换器来使用，用于在模型拟合之前对特征进行分析。下面这个例子展示的就是如何用平行坐标的方法对高纬数据进行作图。
 
@@ -103,7 +103,7 @@ Visualizer还可封装Scikit-Learn模型然后对其进行评估，超参数调�
 逐步解说
 -----------
 
-这里用一个回归分析作为简单的例子来展示怎样在机器学习流程中使用visualizers。用上传到`UCI机器学习数据库 <https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset>`_ 的`共享单车数据集 <https://s3.amazonaws.com/ddl-data-lake/yellowbrick/bikeshare.zip>`_ ，我们可以用季节、天气、或者是否假日等信息对某个小时内被租自行车的数量进行预测。
+这里用一个回归分析作为简单的例子来展示怎样在机器学习流程中使用visualizers。用上传到 `UCI机器学习数据库 <https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset>`_ 的 `共享单车数据集 <https://s3.amazonaws.com/ddl-data-lake/yellowbrick/bikeshare.zip>`_ ，我们可以用季节、天气、或者是否假日等信息对某个小时内被租自行车的数量进行预测。
 
 .. 注意:: 我们已经将UCI机器学习数据库中的这部分数据上传以便其更容易载入到Pandas中；确认你下载的是`Yellowbrick版的数据集 <https://s3.amazonaws.com/ddl-data-lake/yellowbrick/bikeshare.zip>`_ 。
 
@@ -136,7 +136,7 @@ Visualizer还可封装Scikit-Learn模型然后对其进行评估，超参数调�
 
 上图表示的是特征两辆之间Pearson相关系数，其中坐标中的每一个小格代表x和y轴上两个相交特征的相关系数，其颜色的深浅和相关系数的值大小相关。当Pearson系数为1.0时，表示两个特征之间有强烈的正的线性相关，而-1.0则表示两个特征之间有强烈的负的线性相关（而0则表示没有任何相关）。因此我们需要找到深红色或者深蓝色的方块对其进行深入研究。
 
-在这个图上我们可以看到特征7（temperature）和特征9（feelslike）有很强的相关性，并且特征0（season）和特征1（month）也有很强的相关性。这好像有些道理；我们感觉的温度依赖于实际温度以及其他空气质量相关的因子，并且每年中的季节是通过月份来描述的。为了对其进行更深入的分析，我们还可以用`JointPlotVisualizer <http://www.scikit-yb.org/en/latest/api/yellowbrick.features.html#module-yellowbrick.features.jointplot>`_ 来考察这些相关性。
+在这个图上我们可以看到特征7（temperature）和特征9（feelslike）有很强的相关性，并且特征0（season）和特征1（month）也有很强的相关性。这好像有些道理；我们感觉的温度依赖于实际温度以及其他空气质量相关的因子，并且每年中的季节是通过月份来描述的。为了对其进行更深入的分析，我们还可以用 `JointPlotVisualizer <http://www.scikit-yb.org/en/latest/api/yellowbrick.features.html#module-yellowbrick.features.jointplot>`_ 来考察这些相关性。
 
 .. code-block:: python
 
