@@ -5,7 +5,7 @@
 
 如果你对Yellowbrick还不熟悉, 这个教程可以帮助你很快上手将可视化运用到你机器学习的流程中去。不过在我们开始用Yellowbrick之前，有几个开发环境相关的问题需要注意。
 
-Yellowbrick主要依赖于两个包: `Scikit-Learn <http://scikit-learn.org/>`_ 和 `Matplotlib <http://matplotlib.org/>`_.如果你没有安装这两个包也没关系，当你安装Yellowbrick的时候，它会帮你将它们一起装上。需要注意的是，要想Yellowbrick达到最佳效果，最好是结合Scikit-Learn 0.18和Matplotlib 2.0及以上版本使用。因为上述两个包都通过C语言编译，在某些系统上（比如Windows）安装时可能会有一些困难。如果你安装有困难，可以使用`Anaconda <https://anaconda.org>`_等其他版本Python。
+Yellowbrick主要依赖于两个包: `Scikit-Learn <http://scikit-learn.org/>`_ 和 `Matplotlib <http://matplotlib.org/>`_.如果你没有安装这两个包也没关系，当你安装Yellowbrick的时候，它会帮你将它们一起装上。需要注意的是，要想Yellowbrick达到最佳效果，最好是结合Scikit-Learn 0.18和Matplotlib 2.0及以上版本使用。因为上述两个包都通过C语言编译，在某些系统上（比如Windows）安装时可能会有一些困难。如果你安装有困难，可以使用`Anaconda <https://anaconda.org>`_ 等其他版本Python。
 
 
 .. 注意:: Jupyter，Pandas，还有其他辅助库，比如文字可视化库（NLTK）是没有和Yellowbrick一起安装的，必须单独安装.
@@ -29,19 +29,19 @@ Yellowbrick虽然和Python 2.7及以后版本也兼容，但是如果你想更�
 
 你也可以用``-u``标记对Scikit-Learn，matplotlib或者其他和Yellowbrick兼容的第三方包进行升级.
 
-如果你使用的是Windows或者Anaconda，你也可以充分利用`conda <https://conda.io/docs/intro.html>`_的功能安装`Anaconda Yellowbrick package <https://anaconda.org/DistrictDataLabs/yellowbrick>`_:
+如果你使用的是Windows或者Anaconda，你也可以充分利用`conda <https://conda.io/docs/intro.html>`_ 的功能安装`Anaconda Yellowbrick package <https://anaconda.org/DistrictDataLabs/yellowbrick>`_ :
 
 .. code-block:: bash
 
     conda install -c districtdatalabs yellowbrick
 
-.. 警告:: 在Linux上用Anaconda安装matplotlib时有一个`漏洞 <https://github.com/DistrictDataLabs/yellowbrick/issues/205>`_。如果你有任何问题，请在GitHub知会我们.
+.. 警告:: 在Linux上用Anaconda安装matplotlib时有一个`漏洞 <https://github.com/DistrictDataLabs/yellowbrick/issues/205>`_ 。如果你有任何问题，请在GitHub知会我们.
 
 一旦安装好，不管你是在Python内部还是在Jupyter notebooks上运行Yellowbrick应该就没问题了。需要注意的是，因为Yellowbrick用的是matplotlib，其并不能在虚拟环境中运行。如果你一定要用的话，可能需要费一些周折。
 
 使用Yellowbrick
 -----------------
-为了更好得配合Scikit-Learn一起使用，我们特意对Yellowbrick API进行了一些特殊设计。当然其最主要的接口就是“Visualizer” —— 一个可以运用数据产生图片的对象。visualizer是一系列Scikit-Learn的`Estimator <http://scikit-learn.org/stable/developers/contributing.html#apis-of-scikit-learn-objects>`_对象并且和画图的方法有很多接口。和用Scikit-Learn建模相同的流程相同，用visualizer也需要先将其载入，对其初始化，调用其``fit()``方法，然后调用其``poof()``方法 —— 然后就是见证奇迹的那一刻了。
+为了更好得配合Scikit-Learn一起使用，我们特意对Yellowbrick API进行了一些特殊设计。当然其最主要的接口就是“Visualizer” —— 一个可以运用数据产生图片的对象。visualizer是一系列Scikit-Learn的`Estimator <http://scikit-learn.org/stable/developers/contributing.html#apis-of-scikit-learn-objects>`_ 对象并且和画图的方法有很多接口。和用Scikit-Learn建模相同的流程相同，用visualizer也需要先将其载入，对其初始化，调用其``fit()``方法，然后调用其``poof()``方法 —— 然后就是见证奇迹的那一刻了。
 
 比如，有很多visualizer可以作为转换器来使用，用于在模型拟合之前对特征进行分析。下面这个例子展示的就是如何用平行坐标的方法对高纬数据进行作图。
 
@@ -103,11 +103,11 @@ Visualizer还可封装Scikit-Learn模型然后对其进行评估，超参数调�
 逐步解说
 -----------
 
-Consider a regression analysis as a simple example of the use of visualizers in the machine learning workflow. Using a `bike sharing dataset <https://s3.amazonaws.com/ddl-data-lake/yellowbrick/bikeshare.zip>`_ based upon the one uploaded to the `UCI Machine Learning Repository <https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset>`_, we would like to predict the number of bikes rented in a given hour based on features like the season, weather, or if it's a holiday.
+这里用一个回归分析作为简单的例子来展示怎样在机器学习流程中使用visualizers。用上传到`UCI机器学习数据库 <https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset>`_ 的`共享单车数据集 <https://s3.amazonaws.com/ddl-data-lake/yellowbrick/bikeshare.zip>`_ ，我们可以用季节、天气、或者是否假日等信息对某个小时内被租自行车的数量进行预测。
 
-.. note:: We have updated the dataset from the UCI ML repository to make it a bit easier to load into Pandas; make sure you download the `Yellowbrick version of the dataset <https://s3.amazonaws.com/ddl-data-lake/yellowbrick/bikeshare.zip>`_.
+.. 注意:: 我们已经将UCI机器学习数据库中的这部分数据上传以便其更容易载入到Pandas中；确认你下载的是`Yellowbrick版的数据集 <https://s3.amazonaws.com/ddl-data-lake/yellowbrick/bikeshare.zip>`_ 。
 
-After downloading the dataset and unzipping it in your current working directory, we can load our data as follows:
+在你下载并且将数据集解压缩到你目前的工作目录之后，我们可以将数据用如下方法载入：
 
 .. code-block:: python
 
@@ -120,7 +120,7 @@ After downloading the dataset and unzipping it in your current working directory
     ]]
     y = data["riders"]
 
-The machine learning workflow is the art of creating *model selection triples*, a combination of features, algorithm, and hyperparameters that uniquely identifies a model fitted on a specific data set. As part of our feature selection, we want to identify features that have a linear relationship with each other, potentially introducing covariance into our model and breaking OLS (guiding us toward removing features or using regularization). We can use the Rank2D_ visualizer to compute Pearson correlations between all pairs of features as follows:
+机器学习的流程是创作*模型选择三重奏*的艺术，将特征、算法和超参数柔和在一起独特地组成一个模型并将其运用到特定的数据集上。作为特征选择的一部分，我们需要将和其他有线性关系的一部分特征识别出来。因为这部分特征有可能将协方差引入到模型中并且破坏OLS（将我们引入到移除特征或者使用正则化的道路上）。我们可以用Rank2D_ visualizer将所有特征两两之间的Pearson相关系数计算出来，具体操作如下：
 
 .. _Rank2D: http://www.scikit-yb.org/en/latest/api/yellowbrick.features.html#module-yellowbrick.features.rankd
 
@@ -134,9 +134,9 @@ The machine learning workflow is the art of creating *model selection triples*, 
 
 .. image:: images/quickstart/bikeshare_rank2d.png
 
-This figure shows us the Pearson correlation between pairs of features such that each cell in the grid represents two features identified in order on the x and y axes and whose color displays the magnitude of the correlation. A Pearson correlation of 1.0 means that there is a strong positive, linear relationship between the pairs of variables and a value of -1.0 indicates a strong negative, linear relationship (a value of zero indicates no relationship). Therefore we are looking for dark red and dark blue boxes to identify further.
+上图表示的是特征两辆之间Pearson相关系数，其中坐标中的每一个小格代表x和y轴上两个相交特征的相关系数，其颜色的深浅和相关系数的值大小相关。当Pearson系数为1.0时，表示两个特征之间有强烈的正的线性相关，而-1.0则表示两个特征之间有强烈的负的线性相关（而0则表示没有任何相关）。因此我们需要找到深红色或者深蓝色的方块对其进行深入研究。
 
-In this chart we see that features 7 (temperature) and feature 9 (feelslike) have a strong correlation and also that feature 0 (season) has a strong correlation with feature 1 (month). This seems to make sense; the apparent temperature we feel outside depends on the actual temperature and other airquality factors, and the season of the year is described by the month! To dive in deeper, we can use the `JointPlotVisualizer <http://www.scikit-yb.org/en/latest/api/yellowbrick.features.html#module-yellowbrick.features.jointplot>`_ to inspect those relationships.
+在这个图上我们可以看到特征7（temperature）和特征9（feelslike）有很强的相关性，并且特征0（season）和特征1（month）也有很强的相关性。这好像有些道理；我们感觉的温度依赖于实际温度以及其他空气质量相关的因子，并且每年中的季节是通过月份来描述的。为了对其进行更深入的分析，我们还可以用`JointPlotVisualizer <http://www.scikit-yb.org/en/latest/api/yellowbrick.features.html#module-yellowbrick.features.jointplot>`_ 来考察这些相关性。
 
 .. code-block:: python
 
@@ -148,11 +148,11 @@ In this chart we see that features 7 (temperature) and feature 9 (feelslike) hav
 
 .. image:: images/quickstart/temp_feelslike_jointplot.png
 
-This visualizer plots a scatter diagram of the apparent temperature on the y axis and the actual measured temperature on the x axis and draws a line of best fit using a simple linear regression. Additionally, univariate distributions are shown as histograms above the x axis for temp and next to the y axis for feelslike.  The ``JointPlotVisualizer`` gives an at-a-glance view of the very strong positive correlation of the features, as well as the range and distribution of each feature. Note that the axes are normalized to the space between zero and one, a common technique in machine learning to reduce the impact of one feature over another.
+上面用visualizer做了一个散点图，其中y轴是感觉的温度，x轴是实际温度，然后再将一个用简单线性回归训练的最佳模型的回归线添加上去。另外，还可将各个变量的分布情况用直方图的形式分别在x轴（temp）上方和y轴（feelslike）右侧显示。``JointPlotVisualizer``让我们能快速浏览有强相关性的特征，以及各个特征的范围和分布情况。需要注意的是图中的各个轴都已经标准话到0到1之间的值，这是机器学习中一中非常常用的减少一个特征对另一个影响的技术。
 
-This plot is very interesting; first there appear to be some outliers in the dataset, where feelslike is approximately equal to 0.25. These instances may need to be manually removed in order to improve the quality of the final model because they could represent data input errors. Secondly, we can see that more extreme temperatures create an exaggerated effect in perceived temperature; the colder it is, the colder people are likely to believe it to be, and the warmer it is, the warmer it appears to be. Moderate temperatures feel like they do. This gives us the intuition that feelslike may be a better feature than temp, and if it is causing problems in our regression analysis, we should probably remove the temp variable in favor of feels like.
+这个图非常有趣；首先在feelslike等于0.25处好像有一些异常值。为了增加最终模型的质量，也许需要我们对其进行人工移除,因为这些也许是数据输入造成错误。其次，我们可以看到更多的极端温度可以对感知温度造成夸大的效应；温度越低，人们就越容易感觉越冷，温度越高，人们就感觉天气越暖和。适中的温度则让人感觉起来和实际温度不相上下。这给我们一个直觉好像feelslike是一个比temp更好的特征，并且如果其对我们的回归分析造成问题的话，我们应该移除temp变量而保留feelslike。
 
-At this point, we can train our model; let's fit a linear regression to our model and plot the residuals.
+到这，我们就可以训练我们模型了；我们来训练一个线性回归模型，并且绘制其残差。
 
 .. code-block:: python
 
@@ -172,13 +172,13 @@ At this point, we can train our model; let's fit a linear regression to our mode
 
 .. image:: images/quickstart/bikeshare_ols_residuals.png
 
-The residuals plot shows the error against the predicted value, and allows us to look for heteroskedasticity in the model; e.g. regions in the target where the error is greatest. The shape of the residuals can strongly inform us where OLS (ordinary least squares) is being most strongly effected by the components of our model (namely the features). In this case, we can see that the lower the predicted value (the lower the number of riders), the lower the error, but the higher the number of predicted riders, the higher the error. This indicates that our model has more noise in certain regions of the target or that two variables are colinear, meaning that they are injecting error as the noise in their relationship changes.
+残差图不但可以显示与预测数据对应的误差，并且可以让我们观察到模型中的异方差性；比如，方差最大的区域。残差的形状可以让我们很好得意识模型中的组成部分对OLS（普通最小二乘法）的影响最大区域。在这种情况下，我们可以看到预测的值越小（骑车人数越小），误差就越小，而预测的骑车人数越大，误差就越大。这就意味着我们的模型在某些目标区域有更多的噪音或者那两个变量是共线性的，也就是说在他们关系中的噪音发生变化时就产生了误差。
 
-The residuals plot also shows how the model is injecting error, the bold horizontal line at ``residuals = 0`` is no error, and any point above or below that line indicates the magnitude of error. For example, most of the residuals are negative, and since the score is computed as ``actual - expected``, this means that the expected value is bigger than the actual value most of the time, e.g. that our model is primarily guessing more than the actual number of riders. Moreover, there is a very interesting boundary along the top right of the residuals graph, indicating an interesting affect in model space; possibly that some feature is strongly weighted in the region of that model.
+残差图还向我们展示了模型的误差是怎么产生的：那根加粗的水平线表示的是``residuals = 0``，也就是没有误差；线上方或者下方的点则表示误差值的大小。比如大部分残差是负值，并且其值是由``actual - expected``算得，也就是说大部分时间预测值比实际值要大，比如和实际相比我们的模型总是预测有更多的骑手。还有，在残差图的右上角还有一个非常有趣的分界线，显示模型空间中有一种非常有趣的效应；也许在这个模型中有一些特征权重比较大。
 
-Finally the residuals are colored by training and test set. This helps us identify errors in creating train and test splits. If the test error doesn't match the train error then our model is either overfit or underfit. Otherwise it could be an error in shuffling the dataset before creating the splits.
+最后，残差图中的训练样本和测试样本还可以用不同的颜色标注。这可以帮助我们更好的发现在训练和测试样本生成时产生的误差。如果测试样本误差和训练样本误差不相符的话，那我们的样本不是过拟合就是欠拟合。否则就是产生两个样本前随机整理数据集时产生了误差。
 
-Because our coefficient of determination for this model is 0.328, let's see if we can fit a better model using *regularization*, and explore another visualizer at the same time.
+因为这个模型的决定系数为0.328，让我们看看能不能用*正则化*训练一个更好的模型，并同时探索另一个visualizer。
 
 .. code-block:: python
 
@@ -194,13 +194,13 @@ Because our coefficient of determination for this model is 0.328, let's see if w
 
 .. image:: images/quickstart/bikeshare_ridge_alphas.png
 
-When exploring model families, the primary thing to consider is how the model becomes more *complex*. As the model increases in complexity, the error due to variance increases because the model is becoming more overfit and cannot generalize to unseen data. However, the simpler the model is the more error there is likely to be due to bias; the model is underfit and therefore misses its target more frequently. The goal therefore of most machine learning is to create a model that is *just complex enough*, finding a middle ground between bias and variance.
+在探索模型家族的过程中，第一个要考虑的是模型是怎样变得更*复杂*的。当模型的复杂度增加，由于方差增加形成的误差也相应增加，因为模型会变得过拟合并且不能泛化到未知数据上。然而，模型越简单由于偏差造成的误差就会越大；模型欠拟合，因此有更多的未中靶预测。大部分机器学习的目的就是要产生一个*复杂度适中*的模型，在偏差和方差之间找到一个中间点。
 
-For a linear model, complexity comes from the features themselves and their assigned weight according to the model. Linear models therefore expect the *least number of features* that achieves an explanatory result. One technique to achieve this is *regularization*, the introduction of a parameter called alpha that normalizes the weights of the coefficients with each other and penalizes complexity. Alpha and complexity have an inverse relationship, the higher the alpha, the lower the complexity of the model and vice versa.
+对一个线性模型来说，复杂度来自于特征本身以及根据模型赋予它们的值。因此对线性模型期望用*最少的特征*达到最好的阐释结果。*正则化*是实现如上目标的其中一种技术，即引入一个alpha参数来对其相互之间系数的权重进行标准化并且惩罚其复杂度。Alpha和复杂度之间是一个负相关。alpha值越大，复杂度越小，反之亦然。
 
-The question therefore becomes how you choose alpha. One technique is to fit a number of models using cross-validation and selecting the alpha that has the lowest error. The ``AlphaSelection`` visualizer allows you to do just that, with a visual representation that shows the behavior of the regularization. As you can see in the figure above, the error decreases as the value of alpha increases up until our chosen value (in this case, 3.181) where the error starts to increase. This allows us to target the bias/variance trade-off and to explore the relationship of regularization methods (for example Ridge vs. Lasso).
+因此现在的问题就变成怎样选取alpha值了。其中的一项技术是用交叉验证的方法训练一系列模型，然后选择使误差值最小的alpha。``AlphaSelection``就是实现以上技术的一个visualizer，其以图表形式呈现正则化的效果。正如上图所示，误差随着alpha值的增加而减小直到我们需要的值（目前情况下为3.181），然后误差开始增加。这让我们可以实现偏差/方差平衡的目标，并且可以对不同的正则化方法之间的关系进行探索（比如Ridge对阵Lasso）。
 
-We can now train our final model and visualize it with the ``PredictionError`` visualizer:
+我们现在可以训练我们最终的模型并且用``PredictionError``对其进行可视化了：
 
 .. code-block:: python
 
@@ -213,12 +213,10 @@ We can now train our final model and visualize it with the ``PredictionError`` v
     visualizer.poof()
 
 .. image:: images/quickstart/bikeshare_ridge_prediction_error.png
+用预测误差visualizer将实际（测量）值对期望（预测）值进行可视化。黑色的45度虚线表示误差为0的点。和残差图一样，这让我们可以看到误差在何处出现，值为多大。
 
+在这个图上，我们可以看到大部分的点集中在小于200骑手的位置。我们也许想要尝试用正交匹配追踪算法（OMP）或者样条（spline）来训练一个将更多区域性考虑进来的回归模型。我们还可以看到残差图中奇怪的拓扑结构好像已被Ridge回归纠正，而且在我们的模型中大值和小值之间有了更多的平衡。Ridge正则化可能纠正了两个特征之间的协方差问题。当我们用其他模型的形式将我们的数据分析推进的同时，我们可以继续visualizers来快速比较并且可视化我们的结果。
 
-The prediction error visualizer plots the actual (measured) vs. expected (predicted) values against each other. The dotted black line is the 45 degree line that indicates zero error. Like the residuals plot, this allows us to see where error is occurring and in what magnitude.
-
-In this plot we can see that most of the instance density is less than 200 riders. We may want to try orthogonal matching pursuit or splines to fit a regression that takes into account more regionality. We can also note that that weird topology from the residuals plot seems to be fixed using the Ridge regression, and that there is a bit more balance in our model between large and small values. Potentially the Ridge regularization cured a covariance issue we had between two features. As we move forward in our analysis using other model forms, we can continue to utilize visualizers to quickly compare and see our results.
-
-Hopefully this workflow gives you an idea of how to integrate Visualizers into machine learning with Scikit-Learn and inspires you to use them in your work and write your own! For additional information on getting started with Yellowbrick, check out the :doc:`tutorial`. After that you can get up to speed on specific visualizers detailed in the :doc:`api/index`.
+希望这个流程让你对怎样将Visualizers通过Scikit-Learn整合到机器学习中去有一个概念，并且给你启发让你将其运用到你的工作中！如果想要了解更多的有关怎样开始使用Yellowbrick的信息，请查看:doc:`tutorial` 。然后你就在 :doc:`api/index` 上快速查看更多的特定visualizers了。
 
 翻译：`Juan L. Kehoe <https://juan0001.github.io/>`_
