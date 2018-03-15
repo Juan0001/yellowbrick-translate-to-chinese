@@ -1,5 +1,5 @@
 # Timeline:
-|Title|Due Date|
+|Title|Due Date|Name
 |---|---|
 |Quick Start|   |
 |Installation|3-7-2018|
