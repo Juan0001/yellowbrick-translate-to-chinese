@@ -1,6 +1,6 @@
 # Timeline:
 |Title|Due Date|Name|
-|---|---| |
+|---|---|---|
 |Quick Start|   | |
 |Installation|3-7-2018| |
 |Using Yellowbrick|3-14-2018| |
