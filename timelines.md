@@ -9,7 +9,7 @@
 |About the Data|3-28-2018|
 |Feature Extraction|4-4-2018|
 |Modeling and Evaluation|4-11-2018|
-|Visual Model Evaluation|4-18-2018|
+|Visual Model Evaluation|4-18-2018| yue |
 |Reflection|4-25-2018|
 |Visualizers and API|   |
 |Example Datasets|5-2-2018|
