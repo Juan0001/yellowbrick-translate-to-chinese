@@ -12,11 +12,11 @@
 |Visual Model Evaluation|4-18-2018|Yue|
 |Reflection|4-25-2018|Yue|
 |Visualizers and API|   | |
-|Example Datasets|5-2-2018| |
-|Anscombe’s Quartet|5-9-2018| |
-|Feature Analysis Visualizers|5-16-2018| |
-|Regression Visualizers|5-23-2018| |
-|Classification Visualizers|5-30-2018| |
+|Example Datasets|5-2-2018|Juan |
+|Anscombe’s Quartet|5-9-2018|Juan |
+|Feature Analysis Visualizers|5-16-2018|Juan |
+|Regression Visualizers|5-23-2018|Juan |
+|Classification Visualizers|5-30-2018|Juan |
 |Clustering Visualizers|6-6-2018| |
 |Text Modeling Visualizers|6-13-2018| |
 |Colors and Style|6-20-2018| |
